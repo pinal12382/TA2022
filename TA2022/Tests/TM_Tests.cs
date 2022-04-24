@@ -9,33 +9,19 @@ using TA2022.Utilities;
 namespace TA2022.Tests
 {
     [TestFixture]
+    [Parallelizable]
     internal class TM_Tests : CommonDriver
     {
-
-
-
-        [SetUp]
-        public void loginFunction()
-        {
-            // open the crome browser
-
-            mydriver = new ChromeDriver();
-
-            mydriver.Manage().Window.Maximize();
-
-            // Login page object initailazion and definition
-
-            LoginPage LoginPageobj = new LoginPage();
-            LoginPageobj.loginSteps(mydriver);
-
-            // Home page object initailazion and definition
+                  
+                 
+        [Test,Order (1)]
+        public void CreateTM_Test()
+        { 
+             // Home page object initailazion and definition
 
             Homepage HomePageobj = new Homepage();
             HomePageobj.GotoTMpage(mydriver);
-        }
-        [Test]
-        public void CreateTM_Test()
-        {
+        
             // TM page object initailazion and definition
 
             TMpage TMpageobj = new TMpage();
@@ -43,27 +29,32 @@ namespace TA2022.Tests
 
         }
 
-        [Test]
+        [Test, Order (2)]
 
         public void EditTM_Test()
         {
+            // Home page object initailazion and definition
+
+            Homepage HomePageobj = new Homepage();
+            HomePageobj.GotoTMpage(mydriver);
             // Edit TM
 
             TMpage TMpageobj = new TMpage();
             TMpageobj.EditTM(mydriver);
         }
-        [Test]
+        [Test, Order (3)]
         public void DeleteTM_Test()
-        {
+        { 
+            // Home page object initailazion and definition
+
+            Homepage HomePageobj = new Homepage();
+            HomePageobj.GotoTMpage(mydriver);
+        
             // Delete Tm
             TMpage TMpageobj = new TMpage();
             TMpageobj.DeleteTM(mydriver);
 
         }
-        [TearDown]
-        public void CloseTestRun()
-        {
-
-        }
+        
     }
 }

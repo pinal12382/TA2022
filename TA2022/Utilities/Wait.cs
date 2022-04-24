@@ -14,7 +14,7 @@ namespace TA2022.Utilities
         public static void WaitToBeClickable(IWebDriver mydriver,string locator, string locatorValue, int second)
         {
             var Wait = new WebDriverWait(mydriver, new TimeSpan(0,0,second));
-            if(locator == "Xpath")
+            if(locator == "XPath")
             {
                 Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locatorValue)));
             }
@@ -38,7 +38,7 @@ namespace TA2022.Utilities
         public static void WaitToBeVisible(IWebDriver mydriver, string locator, string locatorValue, int second)
         {
             var Wait = new WebDriverWait(mydriver, new TimeSpan(0, 0, second));
-            if (locator == "Xpath")
+            if (locator == "XPath")
             {
                 Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(locatorValue)));
             }

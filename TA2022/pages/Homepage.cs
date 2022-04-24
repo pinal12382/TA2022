@@ -26,5 +26,10 @@ namespace TA2022.pages
             tmOption.Click();
         }
 
+        public void GOtoEmployeePage(IWebDriver mydriver)
+        {
+
+        }
+
     }
 }
