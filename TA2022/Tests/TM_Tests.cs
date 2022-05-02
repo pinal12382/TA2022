@@ -40,7 +40,7 @@ namespace TA2022.Tests
             // Edit TM
 
             TMpage TMpageobj = new TMpage();
-            TMpageobj.EditTM(mydriver);
+            TMpageobj.EditTM(mydriver,"Aarna","Aanav","Pinal");
         }
         [Test, Order (3)]
         public void DeleteTM_Test()

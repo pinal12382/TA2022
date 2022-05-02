@@ -10,7 +10,7 @@ using TA2022.pages;
 
 namespace TA2022.Utilities
 {
-    internal class CommonDriver
+    public class CommonDriver
     {
         public IWebDriver mydriver;
 
