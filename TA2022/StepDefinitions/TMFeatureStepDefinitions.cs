@@ -67,13 +67,13 @@ namespace TA2022.StepDefinitions
             Assert.That(newPrice == "$1,310.00", "Actual price and expected Price do not match");
         }
         [When(@"I update '([^']*)','([^']*)','([^']*)' on existing time and material records")]
-        public void WhenIUpdateOnExistingTimeAndMaterialRecords(string p0, string p1, string p2)
+        public void WhenIUpdateOnExistingTimeAndMaterialRecords(string p0,string p1,string p2)
         {
             TMpageobj.EditTM(mydriver,p0,p1,p2);
         }
 
         [Then(@"the record should have updated '([^']*)','([^']*)','([^']*)'")]
-        public void ThenTheRecordShouldHaveUpdated(string p0, string p1, string p2)
+        public void ThenTheRecordShouldHaveUpdated(string p0,string p1,string p2)
         {
             string editedDescription = TMpageobj.GetEditedDescription(mydriver);
             string editedcode = TMpageobj.GetEditedcode(mydriver);

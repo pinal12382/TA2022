@@ -19,9 +19,9 @@ Scenario: Create time and material records with valid details
 
 	Examples: 
 	| Description  | Code     | Price |
-	| Time         | laptop   | 1500  |
-	| Material     | Mouse    | 30    |
-	| EditedRecord | Keyboard | 50    |
+	| Time         | laptop   | $1,500.00 |
+	| Material     | Mouse    | $30.00    |
+	| EditedRecord | Keyboard | $50.00    |
 
 
 

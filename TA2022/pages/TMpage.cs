@@ -112,28 +112,21 @@ namespace TA2022.pages
             return actualPrice.Text;
         }
 
-        public void EditTM(IWebDriver mydriver, string description,string code,string price)
+        public void EditTM(IWebDriver mydriver,string description,string code,string price)
         {
             // Wait untill entire TM page will display
-            Wait.WaitToBeVisible(mydriver, "XPath", "//*[@id='tmsGrid']/div[3]/table/tbody/tr[1]/td[1]", 5);
+            Wait.WaitToBeVisible(mydriver,"XPath", "//*[@id='tmsGrid']/div[3]/table/tbody/tr[1]/td[1]",5);
 
             //Click on go to last page button
 
             IWebElement lastpageButton = mydriver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span"));
             lastpageButton.Click();
+            Thread.Sleep(5000);
 
-            IWebElement findRecordCreated = mydriver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
 
-            if (findRecordCreated.Text == "Test2022")
-            {
-                // Click on edit button
-                IWebElement editButton = mydriver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[5]/a[1]"));
-                editButton.Click();
-            }
-            else
-            {
-                Assert.Fail("Record to be edited hasn't been found. Record not edited");
-            }
+           // Click on edit button
+             IWebElement editButton = mydriver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[5]/a[1]"));
+            editButton.Click();
 
             // Edit code
             IWebElement codeTextbox = mydriver.FindElement(By.Id("Code"));
